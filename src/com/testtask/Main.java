@@ -15,7 +15,8 @@ public class Main {
                 {null, null},
                 {"star", "4"},
                 {"", ""},
-                {"am i right?", "am i right!"}
+                {"am i right?", "am i right!"},
+                null
         };
 
         Arrays.stream(testCouples)
@@ -23,6 +24,10 @@ public class Main {
     }
 
     private static void showTheResult(String[] testPair) {
+        if (testPair == null || testPair.length != 2) {
+            System.out.println("Wrong test arguments, array of two strings is expected.");
+            return;
+        }
         System.out.printf("possiblySame(\"%s\",\"%s\") -> %b \n", testPair[0], testPair[1], possiblySame(testPair[0], testPair[1]));
     }
 
