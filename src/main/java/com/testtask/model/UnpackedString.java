@@ -10,6 +10,9 @@ public class UnpackedString {
 
     private String content;
 
+    public UnpackedString() {
+    }
+
     public UnpackedString(String capchaString) {
         if (capchaString != null) {
             this.content = capchaToContent(capchaString);
