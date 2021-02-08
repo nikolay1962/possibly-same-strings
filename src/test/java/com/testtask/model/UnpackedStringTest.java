@@ -73,6 +73,7 @@ class UnpackedStringTest {
         String[] testValues = {"starwars", "st2ars"};
         UnpackedString first = new UnpackedString(testValues[0]);
         UnpackedString second = new UnpackedString(testValues[1]);
+        assertNotEquals(first.getLength(), second.getLength());
         assertEquals(first.possiblySame(second), false);
     }
 
@@ -81,6 +82,7 @@ class UnpackedStringTest {
         String[] testValues = {"starwars", "st3ers"};
         UnpackedString first = new UnpackedString(testValues[0]);
         UnpackedString second = new UnpackedString(testValues[1]);
+        assertEquals(first.getLength(), second.getLength());
         assertEquals(first.possiblySame(second), false);
     }
 }
