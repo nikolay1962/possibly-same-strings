@@ -1,9 +1,5 @@
 package com.testtask.model;
 
-import java.util.regex.MatchResult;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class UnpackedString {
 
     private Integer length;
@@ -37,13 +33,6 @@ public class UnpackedString {
 
     private String[] getArrayOfSpecificParts(String capchaString, String condition) {
         return capchaString.split(condition);
-    }
-
-    private int[] getArrayOfLengthsOfUnrecognizedParts(String capchaString) {
-        Pattern p = Pattern.compile("\\d+");
-        Matcher m = p.matcher(capchaString);
-        int[] ints = m.results().map(MatchResult::group).mapToInt(Integer::parseInt).toArray();
-        return ints;
     }
 
     public Integer getLength() {
